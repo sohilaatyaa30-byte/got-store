@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GOT | جوت</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <nav class="left">
+    <a href="#products" data-i18n="navProducts"></a>
+    <a href="#about" data-i18n="navAbout"></a>
+    <a href="#contact" data-i18n="navContact"></a>
+  </nav>
+  <div class="logo">GOT</div>
+  <div class="actions">
+    <button id="langBtn" class="pill">EN</button>
+    <button id="cartBtn" class="pill">🛍 <span id="cartCount">0</span></button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="ring"></div>
+  <div id="strip" class="strip"></div>
+  <h1 class="bigtitle" id="bigTitle">GOT</h1>
+  <div class="hero-note" data-i18n="heroText"></div>
+  <a class="pill hero-cta" href="#products" data-i18n="newCol"></a>
+  <div id="heroCard" class="mini-card"></div>
+</section>
+<section class="features">
+  <div data-i18n="ft1"></div><div data-i18n="ft2"></div><div data-i18n="ft3"></div>
+</section>
+
+<section id="products">
+  <h2 data-i18n="navProducts"></h2>
+  <div class="filters">
+    <button class="f active" data-c="all" data-i18n="all"></button>
+    <button class="f" data-c="basic" data-i18n="basic"></button>
+    <button class="f" data-c="print" data-i18n="print"></button>
+  </div>
+  <div id="grid" class="grid"></div>
+</section>
+
+<section id="about" class="about">
+  <h2 data-i18n="navAbout"></h2>
+  <p data-i18n="aboutText"></p>
+</section>
+
+<section id="contact" class="about">
+  <h2 data-i18n="navContact"></h2>
+  <p><span data-i18n="insta"></span> @yourbrand</p>
+</section>
+
+<footer>© <span id="y"></span> GOT</footer>
+
+<aside id="cart" class="cart hidden">
+  <div class="cart-head"><h3 data-i18n="cartTitle"></h3><button id="closeCart">✕</button></div>
+  <div id="done" class="done hidden"></div>
+  <div id="items"></div>
+  <div class="total"><span data-i18n="total"></span>: <b id="total">0</b> <span data-i18n="egp"></span></div>
+  <form id="orderForm">
+    <input name="name" data-ph="name" required>
+    <input name="phone" data-ph="phone" required inputmode="tel">
+    <input name="city" data-ph="city" required>
+    <textarea name="address" data-ph="address" required></textarea>
+    <div class="pay"><b data-i18n="payTitle"></b>
+      <div id="payOpts"></div>
+      <div id="payInfo" class="payinfo"></div>
+    </div>
+    <button class="btn" type="submit" data-i18n="checkout"></button>
+    <small data-i18n="payNote"></small>
+  </form>
+</aside>
+<script src="products.js"></script>
+<script src="hoodie.js"></script>
+<script>
+if (typeof PRODUCTS === "undefined" || typeof hoodieURL === "undefined" || typeof COLORS === "undefined") {
+  document.body.innerHTML = '<div style="padding:40px;font-family:Arial;text-align:center" dir="rtl"><h2>ملف ناقص أو الكود اتلزق غلط</h2><p>تأكدي إن عندك 5 ملفات جنب بعض: index.html, style.css, products.js, hoodie.js, app.js، وإن كل واحد فيه الكود الكامل.</p></div>';
+  throw new Error("missing files");
+}
+</script>
+<script src="app.js"></script>
+</body>
+</html>
